@@ -1,37 +1,44 @@
 package method_overriding;
 
+//Example of Overriding and basic Inheritance 
 public class TestOverriding {
 
 	static class Person{
-		public void talking(){
-			System.out.println("All the person Talking");
+	
+		public void talk(){
+			System.out.println("All of them Talk(Person method)");
 		};
-		public void eatting(){
-			System.out.println("All the person Eatting");
+		public void eat(){
+			System.out.println("All of them Eat(Person Method)");
 		};
 		public void Sleep(){
-			System.out.println("All the person Sleep");
+			System.out.println("All of them Sleep(Person Method)");
 		};
 	}; //End of Class
 	
 	static class Programmer extends Person{
 		@Override
-		public void talking(){
-			System.out.println("All the Programming talk less work more");
+		public void talk(){
+			System.out.println("Hello world(Programmer Method)");
 		}; //Overridden Method
 		
-		public void codding(){
-			System.out.println("All the Programming do code");
+		public void code(){
+			System.out.println("All the Programers do code(Programmer Code)");
 		};
 		
 	}; //End of Class
 	
 	public static void main(String[] args) {
-		Person P = new Person();
-		P.talking(); // Method From the Person
+		Person P =  new Person();
+		
+		P.talk(); // Method From the Person
+		System.out.println("*** End of Person Class *** ");
 		Programmer C =new Programmer();
-		C.talking(); // Method From the Programmer
-		C.eatting();
+		C.talk(); // Method From the Programmer
+		C.eat();
+		C.code();
+		System.out.println("*** End of Programmer Class *** ");
+		
 	}; // End of Main Method
 
 }; // End of Class 
